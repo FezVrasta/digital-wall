@@ -1,0 +1,71 @@
+.grid
+  position: relative
+  flex: 1
+  bottom: 0
+  margin-right: 2em
+  margin-left: 2em
+  margin-top: -30vh
+  display: flex
+  z-index: 1
+  flex-wrap: wrap
+  align-content: flex-start
+  transition: transform 1s cubic-bezier(.01,.62,0,.98)
+
+  &--next-animation
+    animation: slide-up 1.5s
+
+  &--previous-animation
+    animation: slide-down 1.5s
+
+  &__block
+    height: 20vh
+    box-sizing: border-box
+    padding: 0 0.2em 2em 0.2em
+    display: flex
+
+    $unit = 100%/6
+
+    &--1
+      flex: 0 ($unit*1)
+    &--2
+      flex: 0 ($unit*2)
+    &--3
+      flex: 0 ($unit*3)
+    &--3
+      flex: 0 ($unit*4)
+    &--3
+      flex: 0 ($unit*5)
+    &--3
+      flex: 0 ($unit*6)
+
+    &--spacer
+      visibility: hidden
+
+  &__block-content
+    background: white
+    flex: 1
+    border-radius: 4px
+    box-shadow: 0 15px 30px -10px black
+    background-size: cover
+    background-position: center
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 2em
+
+@keyframes slide-up {
+  20% {
+    transform: translateY(100%)
+  }
+  to {
+    transform: translateY(0%)
+  }
+}
+@keyframes slide-down {
+  20% {
+    transform: translateY(-100%)
+  }
+  to {
+    transform: translateY(0%)
+  }
+}

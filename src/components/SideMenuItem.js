@@ -12,7 +12,10 @@ class SideMenuItem extends Component {
 
     return <li styleName={styleName} onClick={this.changeSelection.bind(this)}>
       <Thumb image={this.image()} />
-      {this.props.title}
+      <div>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.date}</p>
+      </div>
     </li>
   }
   image() {

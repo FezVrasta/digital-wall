@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
-import {Actions} from './actions/Actions';
-import BigItem from './components/BigItem';
-import SideMenu from './components/SideMenu';
-import styles from './styles/components/App.styl';
-import CSSModules from 'react-css-modules';
+import React, { Component } from 'react'
+import styles from './styles/components/App.styl'
+import CSSModules from 'react-css-modules'
+
+import {Actions} from './actions/Actions'
+import BigItem from './components/BigItem'
+import SideMenu from './components/SideMenu'
+import Header from './components/Header'
 
 let items = [
   {
@@ -13,7 +15,19 @@ let items = [
     author: {
       name: 'Fez Vrasta',
       email: 'federico.zivolo@gmail.com'
-    }
+    },
+    blocks: [
+      { size: 1, color: '#94A9BA', text: '20 °C' },
+      { size: 2, image: '1.jpg' },
+      { size: 1, image: '2.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, image: '1.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#94A9BA' },
+      { size: 1, color: '#94A9BA' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#94A9BA' }
+    ]
   },
   {
     key: 1,
@@ -22,7 +36,19 @@ let items = [
     author: {
       name: 'Fez Vrasta',
       email: 'federico.zivolo@gmail.com'
-    }
+    },
+    blocks: [
+      { size: 1, color: '#84737F', text: '10 °C' },
+      { size: 2, image: '1.jpg' },
+      { size: 1, image: '2.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, image: '1.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#84737F' },
+      { size: 1, color: '#84737F' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#84737F' }
+    ]
   },
   {
     key: 2,
@@ -31,7 +57,19 @@ let items = [
     author: {
       name: 'Fez Vrasta',
       email: 'federico.zivolo@gmail.com'
-    }
+    },
+    blocks: [
+      { size: 1, color: '#74C9CE', text: '22 °C' },
+      { size: 2, image: '1.jpg' },
+      { size: 1, image: '2.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, image: '1.jpg' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#74C9CE' },
+      { size: 1, color: '#74C9CE' },
+      { size: 1, spacer: true },
+      { size: 1, color: '#74C9CE' }
+    ]
   }
 ]
 
@@ -44,11 +82,14 @@ class App extends Component {
   }
   render() {
     return <div styleName='app'>
-      <SideMenu items={items} selected={this.state.transitionTo || this.state.selected} />
-      <BigItem
-        item={this.state.selected}
-        items={items}
-        transitionTo={this.state.transitionTo}/>
+      <Header />
+      <div styleName='app__content'>
+        <SideMenu items={items} selected={this.state.transitionTo || this.state.selected} />
+        <BigItem
+          item={this.state.selected}
+          items={items}
+          transitionTo={this.state.transitionTo}/>
+        </div>
     </div>
   }
   componentDidMount() {

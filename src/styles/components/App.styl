@@ -8,13 +8,17 @@
 $overlay = rgba(0,0,0,0.65)
 
 .app
-  background: black
   color: white
-  font-family: Helvetica Neue, Helvetica, Segoe UI, Ubuntu, Arial
+  font-family: 'Didact Gothic', Helvetica Neue, Helvetica, Segoe UI, Ubuntu, Arial
   background-size: cover
   background-image: linear-gradient(to bottom, $overlay, $overlay), url(../../images/background.jpg)
-  display: flex
-  flex-direction: row
   min-height: 100vh
   min-width: 100vw
-  overflow: hidden
+  display: flex
+  flex-direction: column
+
+  &__content
+    flex: 1 0
+    display: flex
+    flex-direction: row
+    overflow: hidden
