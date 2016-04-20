@@ -1,0 +1,29 @@
+.big-item-wrapper
+  position: relative
+  flex: 1
+  transition: transform 1.5s cubic-bezier(.17,.67,.54,.96)
+
+.big-item
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  flex-direction: column
+  display: flex
+  margin-left: -100px
+
+  &__main
+    position: relative
+    flex: 0 55vh
+    margin: 4em 2em 2em 0
+    background-size: cover
+    background-position: center
+    border-radius: 6px
+    box-shadow: 0 15px 35px -10px black
+
+  &__previous
+    transform: translateY(-100%)
+
+  &__next
+    transform: translateY(100%)

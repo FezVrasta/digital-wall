@@ -1,0 +1,20 @@
+:global {
+  @require '../reset'
+  body {
+    background: #0B0B17;
+  }
+}
+
+$overlay = rgba(0,0,0,0.65)
+
+.app
+  background: black
+  color: white
+  font-family: Helvetica Neue, Helvetica, Segoe UI, Ubuntu, Arial
+  background-size: cover
+  background-image: linear-gradient(to bottom, $overlay, $overlay), url(../../images/background.jpg)
+  display: flex
+  flex-direction: row
+  min-height: 100vh
+  min-width: 100vw
+  overflow: hidden
